@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getGuestbooks, postGuestbook, deleteGuestbook } from '../api/guestbookAPI';
+import GuestbookGrid from '../components/guestbook/GuestbookGrid';
+import Button from '../components/common/Button';
+import '../styles/GuestbookPage.css';
 
 function GuestbookPage(){
     // 방명록 목록
@@ -68,10 +71,13 @@ function GuestbookPage(){
         }
     }
 
+
     return (
         <main>
             <h1 className="title">Guestbook</h1>
-            <button onClick={handleOpenLeaveGuestbook}>Leave a Message</button>
+            <Button onClick={handleOpenLeaveGuestbook} className="leaveAMessage">Leave a Message</Button>
+
+            <GuestbookGrid guestbooks={guestbooks} />
         </main>
     );
 }
