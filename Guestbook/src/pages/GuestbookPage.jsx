@@ -3,6 +3,7 @@ import { getGuestbooks, postGuestbook, deleteGuestbook } from '../api/guestbookA
 import GuestbookGrid from '../components/guestbook/GuestbookGrid';
 import Button from '../components/common/Button';
 import '../styles/GuestbookPage.css';
+import DetailGuestbook from '../components/guestbook/DetailGuestbook';
 
 function GuestbookPage(){
     // 방명록 목록
@@ -77,7 +78,8 @@ function GuestbookPage(){
             <h1 className="title">Guestbook</h1>
             <Button onClick={handleOpenLeaveGuestbook} className="leaveAMessage">Leave a Message</Button>
 
-            <GuestbookGrid guestbooks={guestbooks} />
+            <GuestbookGrid guestbooks={guestbooks} onReadMore={handleOpenDetail}/>
+            {selectedGuestbook && (<DetailGuestbook guestbook={selectedGuestbook} onClose={handleCloseDetail} onDelete={handleDeleteGuestbook} />)}
         </main>
     );
 }

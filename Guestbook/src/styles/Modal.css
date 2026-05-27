@@ -1,0 +1,33 @@
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    backdrop-filter: blur(10px);
+
+    z-index: 999;
+}
+
+.modalBox{
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 8px;
+    border: 1px solid #303030;
+    background-color: #FFFFFF;
+    box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    margin: auto;
+    margin-top: 35vh;
+}
+
+.detailGuestbook{
+    width: 1072px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+    padding: 64px;
+}

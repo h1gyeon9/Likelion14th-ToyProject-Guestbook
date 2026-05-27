@@ -1,7 +1,7 @@
 import Button from "../common/Button";
 import '../../styles/Guestbook.css';
 
-function Guestbook({ guestbook }) {
+function Guestbook({ guestbook, onReadMore }) {
     return(
         <div className="guestbook">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 30 25" fill="none">
@@ -10,7 +10,7 @@ function Guestbook({ guestbook }) {
             <div className="guestbookInfo">
                 <h2 className="guestbookTitle">{guestbook.title}</h2>
                 <p className="guestbookWriter">{guestbook.writer}</p>
-                <Button className="readMore">Read More</Button>
+                <Button className="readMore" onClick={() => onReadMore(guestbook)}>Read More</Button>
             </div>
         </div>
     );
